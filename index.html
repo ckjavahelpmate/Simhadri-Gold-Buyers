@@ -14,24 +14,42 @@
     line-height:1.6;
   }
   header {
+    position: relative;
     background:linear-gradient(135deg,#f59e0b,#fbbf24);
-    color:#0f172a;
+    color:#64748b;
     text-align:center;
-    padding:2rem 1rem;
+    padding:2rem 1rem 3rem;
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
+  }
+  header img {
+    border-radius:50px;
   }
   header h1 {
     margin:0;
     font-size:2.5rem;
+    color:#1e293b;
   }
   header p {
     margin-top:.5rem;
     font-weight:500;
+    color:#334155;
+  }
+  .header-contact {
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-weight:600;
+    color:#1e293b;
+    background:#fef3c7;
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:2rem;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
   }
   .container {
-    max-width:1000px;
-    margin:2rem auto;
+    width: 80%;         /* updated */
+    margin:2rem auto;   /* center aligned */
     padding:2rem;
   }
   h2 {
@@ -73,14 +91,35 @@
     color:#f59e0b;
     margin-bottom:.5rem;
   }
-  form {
+
+  /* Contact + Form Layout */
+  .contact-form-wrapper {
     display:flex;
-    flex-direction:column;
-    gap:1rem;
+    flex-wrap:wrap;
+    gap:2rem;
+    margin-top:2rem;
+  }
+  .contact, form {
+    flex:1;
+    min-width:280px;
     background:#1e293b;
     padding:2rem;
     border-radius:12px;
     box-shadow:0 6px 18px rgba(0,0,0,.4);
+  }
+  .contact h2, form h2 {
+    text-align:left;
+    margin-bottom:1rem;
+  }
+  .contact p {
+    margin:.5rem 0;
+    color:#e2e8f0;
+	font-size:1.2rem;
+  }
+  form {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
   }
   label {
     font-weight:600;
@@ -117,6 +156,8 @@
 </head>
 <body>
   <header>
+    <div class="header-contact">📞 +91 7259668666</div>
+    <a href="https://maps.app.goo.gl/EHWaGmQYDZUvfGAX8"> <img src="logo.jpg" alt="Logo"></a>
     <h1>Sell Gold in Bangalore</h1>
     <p>Trusted Gold Buyers | Instant Cash for Gold | Simhadri Gold Buyers</p>
   </header>
@@ -151,33 +192,44 @@
       </div>
     </div>
 
-    <!-- Contact Form -->
-    <h2>Get an Instant Callback</h2>
-    <form action="https://formsubmit.co/ck.javahelpmate@gmail.com" method="POST">
-      <!-- Full Name -->
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+    <!-- Contact + Form side by side -->
+    <div class="contact-form-wrapper">
+      <!-- Contact Section -->
+      <div class="contact">
+        <h2>Contact Us</h2>
+        <p>📧 <b>Email:</b> bangariiraaj@gmail.com</p>
+        <p>📞 <b>Phone:</b> +91 7259668666</p>
+        <p>🏢 <b>Address: </b></p>
+        <p>Simhadri Gold Buyers </p>
+        <p>21/8, 1st floor, konanakunte cross</p>
+        <p>Doclors colony main Rd, vasanthapura</p>
+        <p>Bangalore-560062</p>
+        <a href="https://maps.app.goo.gl/EHWaGmQYDZUvfGAX8"><img src="address.png" style="height:150px;margin-right:150px; border-radius: 20px;" ></img></a>
+      </div>
 
-      <!-- Phone -->
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" 
-       required 
-       pattern="[0-9]{10}" 
-       maxlength="10"
-       placeholder="Enter 10-digit mobile number">
+      <!-- Contact Form -->
+      <form action="https://formsubmit.co/bangariiraaj@gmail.com" method="POST">
+        <h2>Get an Instant Callback</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
 
-      <!-- Message -->
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Enter details about your gold items..."></textarea>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" 
+         required 
+         pattern="[0-9]{10}" 
+         maxlength="10"
+         placeholder="Enter 10-digit mobile number">
 
-      <!-- Redirect to your thank you page -->
-      <input type="hidden" name="_next" value="https://ckjavahelpmate.github.io/Simhadri-Gold-Buyers/thankyou.html">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Enter details about your gold items..."></textarea>
 
-      <!-- Disable captcha -->
-      <input type="hidden" name="_captcha" value="false">
+        <!-- Redirect to your thank you page -->
+        <input type="hidden" name="_next" value="https://ckjavahelpmate.github.io/Simhadri-Gold-Buyers/thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
 
-      <button type="submit">Submit Request</button>
-    </form>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
   </div>
 
   <footer>
@@ -185,9 +237,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
